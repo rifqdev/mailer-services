@@ -23,7 +23,7 @@ jobs:
       # 3. Deploy ke VPS menggunakan SSH
       - name: Deploy to VPS
         run: |
-          ssh -o StrictHostKeyChecking=no -p 10433 user@vps-ip-address "
+          ssh -o StrictHostKeyChecking=no 10433 root@38.46.219.162 "
             cd ~/project/mailer-services &&
             git pull origin main &&
             npm install &&
