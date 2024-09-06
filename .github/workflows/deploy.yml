@@ -3,7 +3,7 @@ name Deploy to NAT VPS
 on:
   push:
     branches:
-      - main # Jalankan setiap ada perubahan di main
+      - main  # Jalankan setiap kali ada perubahan di branch 'main'
 
 jobs:
   deploy:
