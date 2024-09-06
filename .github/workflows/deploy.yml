@@ -1,4 +1,4 @@
-name Deploy to NAT VPS
+name: Deploy to NAT VPS
 
 on:
   push:
