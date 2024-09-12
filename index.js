@@ -13,7 +13,7 @@ app.use(express.urlencoded({ extended: false }));
 
 const frontendUrls = process.env.FRONTEND_URL.replace(/[\[\]]/g, "").split(",");
 const corsOptions = {
-  origin: frontendUrls,
+  origin: [process.env.FRONTEND_URL, process.env.FRONTEND_URL_LOCAL],
   optionsSuccessStatus: 200, // some legacy browsers (IE11, various SmartTVs) choke on 204
 };
 
