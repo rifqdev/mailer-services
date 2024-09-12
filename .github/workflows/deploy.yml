@@ -1,4 +1,4 @@
-name Deploy to NAT VPS
+name: Deploy to NAT VPS
 
 on:
   push:
@@ -12,18 +12,18 @@ jobs:
     steps:
       # 1.Checkout code dari repository
       - name: Checkout code
-      uses: actions/checkout@v2
+        uses: actions/checkout@v2
 
       # 2. Setup SSH untuk akses VPS NAT
       - name: Setup SSH
-      uses: webfactory/ssh-agent@v0.5.3
-      with:
-        ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
+        uses: webfactory/ssh-agent@v0.5.3
+        with:
+            ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
 
       # 3. Deploy ke VPS menggunakan SSH
       - name: Deploy to VPS
-      run: |
-        ssh -o StrictHostKeyChecking=no -p 10433 user@vps-ip-address "
+        run: |
+          ssh -o StrictHostKeyChecking=no 10433 root@38.46.219.162 "
             cd ~/project/mailer-services &&
             git pull origin main &&
             npm install &&
